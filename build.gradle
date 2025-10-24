@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    alias libs.plugins.spring.boot
+    alias libs.plugins.dependency.management
+}
+
+allprojects {
+    group = 'ru.booking-system'
+    version = '1.0.0'
+
+    repositories {
+        mavenCentral()
+    }
+
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = '24'
+
+    dependencies {
+        implementation libs.spring.boot.starter
+        testImplementation libs.spring.boot.starter.test
+        testRuntimeOnly libs.junit.platform.launcher
+    }
+
+}

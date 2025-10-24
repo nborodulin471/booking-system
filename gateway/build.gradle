@@ -1,0 +1,9 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation libs.spring.cloud.starter.gateway
+    implementation libs.eureka.client
+}
+

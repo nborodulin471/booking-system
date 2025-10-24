@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+dependencies {
+    implementation libs.spring.boot.starter.security
+    implementation libs.spring.boot.starter.resource.server
+    implementation libs.springdoc.openapi.starter.webmvc
+    implementation libs.jjwt.api
+    runtimeOnly libs.jjwt.impl
+    runtimeOnly libs.jjwt.jackson
+}

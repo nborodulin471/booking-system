@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources', '../common/src/main/resources']
+        }
+    }
+}
+
+dependencies {
+    implementation project(':common')
+    implementation libs.spring.boot.starter.jpa
+    implementation libs.eureka.client
+    implementation libs.spring.boot.starter.web
+    implementation libs.spring.boot.starter.security
+    implementation libs.springdoc.openapi.starter.webmvc
+    implementation libs.jjwt.api
+    implementation libs.spring.boot.starter.resource.server
+    runtimeOnly libs.jjwt.impl
+    runtimeOnly libs.jjwt.jackson
+
+    runtimeOnly libs.com.h2database
+}
+
+test {
+    useJUnitPlatform()
+}
